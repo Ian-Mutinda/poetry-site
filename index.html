@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Folio — A curated collection of original poems." />
+  <title>Folio — A Poetry Collection</title>
+
+  <!-- Fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Prevent theme flash -->
+  <script>
+    (function() {
+      const t = localStorage.getItem('folio-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- Page transition curtain -->
+  <div class="page-transition" id="pageCurtain" aria-hidden="true"></div>
+
+  <!-- Animated background -->
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+  </div>
+
+  <!-- Fixed header -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" aria-label="Folio home">
+        F<span>o</span>lio
+      </a>
+      <div class="header-controls">
+        <!-- Dark/Light toggle -->
+        <button
+          class="icon-btn"
+          id="themeToggle"
+          aria-label="Toggle dark mode"
+          title="Toggle theme"
+        >
+          <span id="themeIcon">☽</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <div class="site-wrapper">
+    <main>
+
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="heroHeading">
+        <div class="container">
+          <p class="hero-eyebrow">A curated collection</p>
+          <h1 class="hero-title" id="heroHeading">
+            Words that<br><em>live</em> longer
+          </h1>
+          <p class="hero-subtitle">
+            Poetry is the shortest distance between two souls.
+          </p>
+          <div class="hero-rule" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <!-- Poems grid -->
+      <section class="poems-section" aria-labelledby="poemsLabel">
+        <div class="container">
+          <p class="section-label" id="poemsLabel">The collection</p>
+
+          <!-- Cards injected by script.js -->
+          <div class="poems-grid" id="poemsGrid" role="list">
+            <!-- Poem cards rendered here -->
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p class="footer-text">Folio &nbsp;·&nbsp; Poetry &nbsp;·&nbsp; All rights reserved</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Ambient audio control -->
+  <div class="audio-control" aria-label="Ambient audio controls">
+    <button
+      class="audio-btn"
+      id="audioBtn"
+      aria-label="Play ambient music"
+      title="Toggle ambient sound"
+    >
+      <span id="audioIcon">♪</span>
+    </button>
+  </div>
+
+  <!-- Scripts (order matters) -->
+  <script src="js/poems.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

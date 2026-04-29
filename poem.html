@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Folio — Read a poem from the collection." />
+  <title>Poem — Folio</title>
+
+  <!-- Fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Prevent theme flash -->
+  <script>
+    (function() {
+      const t = localStorage.getItem('folio-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- Page transition curtain -->
+  <div class="page-transition" id="pageCurtain" aria-hidden="true"></div>
+
+  <!-- Animated background -->
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+  </div>
+
+  <!-- Fixed header -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" aria-label="Folio home">
+        F<span>o</span>lio
+      </a>
+      <div class="header-controls">
+        <button
+          class="icon-btn"
+          id="themeToggle"
+          aria-label="Toggle dark mode"
+          title="Toggle theme"
+        >
+          <span id="themeIcon">☽</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <div class="site-wrapper">
+    <main>
+      <article class="poem-page" aria-labelledby="poemTitle">
+        <div class="container--narrow">
+
+          <!-- Poem header -->
+          <header class="poem-header">
+            <p class="poem-eyebrow">From the collection</p>
+            <h1 class="poem-title-large" id="poemTitle">
+              <!-- Injected by poem-reader.js -->
+              &nbsp;
+            </h1>
+            <p class="poem-meta" id="poemMeta">
+              <!-- Author · Year -->
+            </p>
+            <div class="poem-divider" aria-hidden="true"></div>
+          </header>
+
+          <!-- Poem body -->
+          <section
+            class="poem-content"
+            aria-label="Poem text"
+          >
+            <div id="poemBody">
+              <!-- Stanzas injected by poem-reader.js -->
+            </div>
+          </section>
+
+          <!-- Navigation -->
+          <nav class="poem-nav" aria-label="Poem navigation">
+            <button
+              class="nav-btn nav-btn--prev"
+              id="prevBtn"
+              aria-label="Previous poem"
+            >
+              ← <span>Previous</span>
+            </button>
+
+            <div>
+              <p class="poem-counter" id="poemCounter"></p>
+              <div style="text-align:center; margin-top: 0.75rem;">
+                <button
+                  class="nav-btn nav-btn--home"
+                  id="homeBtn"
+                  aria-label="Back to collection"
+                >
+                  ↑ Collection
+                </button>
+              </div>
+            </div>
+
+            <button
+              class="nav-btn nav-btn--next"
+              id="nextBtn"
+              aria-label="Next poem"
+            >
+              <span>Next</span> →
+            </button>
+          </nav>
+
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p class="footer-text">Folio &nbsp;·&nbsp; Poetry &nbsp;·&nbsp; All rights reserved</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts (order matters) -->
+  <script src="js/poems.js"></script>
+  <script src="js/poem-reader.js"></script>
+</body>
+</html>
