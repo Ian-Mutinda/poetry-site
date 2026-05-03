@@ -75,7 +75,7 @@ function renderPoem() {
   const counterEl = document.getElementById('poemCounter');
 
   if (titleEl) titleEl.textContent = poem.title;
-  if (metaEl) metaEl.textContent = `${poem.author} · ${poem.year}`;
+  if (metaEl) metaEl.textContent = `${poem.author} · ${poem.date}`;
   if (counterEl) counterEl.textContent = `${id + 1} of ${POEMS.length}`;
 
   // Render poem content with stanza breaks
