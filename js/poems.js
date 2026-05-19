@@ -10,9 +10,10 @@ const POEMS = [
 
   {
     id: 0,
+    song: "assets/song2.mp3",
     title: "The Way You Smile",
     author: "Ian Mutinda",
-    date: "12 April 2026",
+    date: "12 April 2025",
     preview: "It's the way you smile\nwhen you catch me staring",
     content: `It's the way you smile
 when you catch me staring
@@ -56,9 +57,10 @@ every single time`
 
   {
     id: 1,
+    song: "assets/song3.mp3",
     title: "Realization",
     author: "Ian Mutinda",
-    date: "13 April 2026",
+    date: "13 April 2025",
     preview: "It didn't happen all at once\nthere was no warning",
     content: `It didn't happen all at once
 
@@ -77,9 +79,10 @@ and I don't want to fight it`
 
   {
     id: 2,
+    song: "assets/song4.mp3",
     title: "My Little Fox",
     author: "Ian Mutinda",
-    date: "15 April 2026",
+    date: "15 April 2025",
     preview: "At first\nyou were just beautiful",
     content: `At first
 you were just beautiful
@@ -98,9 +101,10 @@ my little foxy`
 
   {
     id: 3,
+    song: "assets/song5.mp3",
     title: "Unspoken Desire",
     author: "Ian Mutinda",
-    date: "17 April 2026",
+    date: "17 April 2025",
     preview: "My lips don't rush yours\nthey linger",
     content: `My lips don't rush yours
 
@@ -123,9 +127,10 @@ every time`
 
   {
     id: 4,
+    song: "assets/song6.mp3",
     title: "Missing You",
     author: "Ian Mutinda",
-    date: "17 April 2026",
+    date: "17 April 2025",
     preview: "I miss you\nmore than I let myself admit",
     content: `I miss you
 more than I let myself admit
@@ -143,9 +148,10 @@ but untouchable`
 
   {
     id: 5,
+    song: "assets/song7.mp3",
     title: "Ghost of Your Touch",
     author: "Ian Mutinda",
-    date: "19 April 2026",
+    date: "19 April 2025",
     preview: "I still feel it\nyour hands, your warmth",
     content: `I still feel it
 
@@ -161,9 +167,10 @@ that refuses to leave`
 
   {
     id: 6,
+    song: "assets/song8.mp3",
     title: "Every Time You Post",
     author: "Ian Mutinda",
-    date: "23 April 2026",
+    date: "23 April 2025",
     preview: "Every time you post\nI see you",
     content: `Every time you post
 
@@ -181,9 +188,10 @@ and have none of it`
 
   {
     id: 7,
+    song: "assets/song9.mp3",
     title: "Distance",
     author: "Ian Mutinda",
-    date: "25 April 2026",
+    date: "25 April 2025",
     preview: "I don't fight it anymore\nthe distance",
     content: `I don't fight it anymore
 
@@ -200,9 +208,10 @@ but not here`
 
   {
     id: 8,
+    song: "assets/song10.mp3",
     title: "You Take Up Space",
     author: "Ian Mutinda",
-    date: "25 April 2026",
+    date: "25 April 2025",
     preview: "You fill my thoughts\neven when I don't want you to",
     content: `You fill my thoughts
 
@@ -213,9 +222,10 @@ you're just there`
 
   {
     id: 9,
+    song: "assets/song11.mp3",
     title: "Why You",
     author: "Ian Mutinda",
-    date: "28 April 2026",
+    date: "28 April 2025",
     preview: "What is it about you\nthat makes everything shift",
     content: `What is it about you
 
@@ -226,9 +236,10 @@ that makes me feel too much`
 
   {
     id: 10,
+    song: "assets/song12.mp3",
     title: "Default Thought",
     author: "Ian Mutinda",
-    date: "29 April 2026",
+    date: "29 April 2025",
     preview: "You are my default\nmy mind returns to you",
     content: `You are my default
 
@@ -239,9 +250,10 @@ every time`
 
   {
     id: 11,
+    song: "assets/song13.mp3",
     title: "I Stop Fighting It",
     author: "Ian Mutinda",
-    date: "1 May 2026",
+    date: "1 May 2025",
     preview: "I stop resisting\nyou",
     content: `I stop resisting
 
@@ -256,9 +268,10 @@ I let it exist`
 
   {
     id: 12,
+    song: "assets/song14.mp3",
     title: "Built Wrong",
     author: "Ian Mutinda",
-    date: "3 May 2026",
+    date: "3 May 2025",
     preview: "I fight my own head\nmore than anything else",
     content: `I fight my own head
 more than anything else

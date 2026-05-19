@@ -177,5 +177,72 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// ── Audio ───────────────────────────────────────────────────
+let audioEl   = null;
+let isPlaying = false;
+
+function initAudio(src) {
+  if (audioEl) { audioEl.pause(); audioEl.src = ''; }
+  audioEl = new Audio(src);
+  audioEl.loop   = true;
+  audioEl.volume = 0;
+
+  const btn  = document.getElementById('audioBtn');
+  const icon = document.getElementById('audioIcon');
+  if (!btn) return;
+
+  function fadeVol(from, to, ms) {
+    const steps = 40, interval = ms / steps, delta = (to - from) / steps;
+    let vol = from;
+    const t = setInterval(() => {
+      vol = Math.min(1, Math.max(0, vol + delta));
+      audioEl.volume = vol;
+      if ((delta > 0 && vol >= to) || (delta < 0 && vol <= to)) {
+        clearInterval(t);
+        if (vol <= 0) { audioEl.pause(); isPlaying = false; }
+      }
+    }, interval);
+  }
+
+  function tryPlay() {
+    const p = audioEl.play();
+    if (p !== undefined) {
+      p.then(() => {
+        isPlaying = true;
+        btn.classList.add('is-playing');
+        if (icon) icon.textContent = '♫';
+        fadeVol(0, 0.45, 3000);
+      }).catch(() => {
+        const unlock = () => { if (!isPlaying) tryPlay(); };
+        document.addEventListener('click',      unlock, { once: true });
+        document.addEventListener('touchstart', unlock, { once: true });
+      });
+    }
+  }
+
+  btn.addEventListener('click', () => {
+    if (isPlaying) {
+      fadeVol(audioEl.volume, 0, 1200);
+      btn.classList.remove('is-playing');
+      if (icon) icon.textContent = '♪';
+      isPlaying = false;
+    } else {
+      audioEl.play();
+      fadeVol(0, 0.45, 1500);
+      btn.classList.add('is-playing');
+      if (icon) icon.textContent = '♫';
+      isPlaying = true;
+    }
+  });
+
+  tryPlay();
+}
+
 // ── Init ───────────────────────────────────────────────────
 renderPoem();
+
+window.addEventListener('load', () => {
+  const id   = getCurrentId();
+  const poem = POEMS.find(p => p.id === id);
+  if (poem && poem.song) initAudio(poem.song);
+});
